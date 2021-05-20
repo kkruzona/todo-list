@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, discardPeriodicTasks, TestBed } from '@angular/core/testing';
 
 import { TodoComponent } from './todo.component';
 

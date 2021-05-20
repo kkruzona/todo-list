@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 interface Todo {
   task: string;
@@ -11,6 +11,7 @@ interface Todo {
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+
   tasks: Todo[] = [
     {
       task: "fold clothes",

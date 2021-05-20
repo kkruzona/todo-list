@@ -1,1 +1,6 @@
-<p>todo works!</p>
+<div class="taskItem" *ngFor="let task of tasks">
+    <button>Complete</button>
+    <h1 class="task">{{task.task}}</h1>
+    <h2 class="status">{{task.completed}}</h2>
+    <br>
+</div>
