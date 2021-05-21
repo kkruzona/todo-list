@@ -12,6 +12,8 @@ interface Todo {
 })
 export class TodoComponent implements OnInit {
 
+  keyword: string = "";
+
   tasks: Todo[] = [
     {
       task: "fold clothes",
@@ -38,6 +40,30 @@ export class TodoComponent implements OnInit {
       completed: false
     },
     ];
+
+    removeTask(index: number) {
+      this.tasks.splice(index,1)
+    }
+
+    completeTask(index: number) {
+      this.tasks[index].completed = true;
+    }
+
+    addTask(task: string) {
+      this.tasks.unshift({
+        task,
+        completed: false
+      });
+    }
+
+
+    // strikeTask() {
+    //   task.completed = !task.completed;
+    // }
+
+    // strikethrough(index) {
+    //   this.tasks.classList.add = "strikethrough"(index)
+    // }
 
   constructor() { }
 

@@ -1,3 +1,43 @@
-.strikethrough {
+.strike {
     text-decoration: line-through;
   }
+
+.task {
+    /* color: blueviolet; */
+}
+
+.status {
+    /* color: rgb(43, 131, 226); */
+    margin-left: 10px;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid #f1f1f1 1px;
+    justify-content: space-between;
+}
+
+.listedItems {
+  display: flex;
+  flex-direction: row;
+  /* margin-left: 10px; */
+}
+
+.leftItems {
+  display: flex;
+  flex-direction: row;
+}
+
+.remove {
+  border: none;
+  background-color: none;
+}
+
+.complete {
+  margin: 10px;
+}
+
+/* p {
+  margin: auto;
+} */

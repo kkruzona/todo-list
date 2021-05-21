@@ -1,6 +1,22 @@
-<div class="taskItem" *ngFor="let task of tasks">
-    <button>Complete</button>
-    <h1 class="task">{{task.task}}</h1>
-    <h2 class="status">{{task.completed}}</h2>
-    <br>
+<div class="allItems">
+    <h1>TODO List</h1>
+    <p>A place to store your todos</p>
+<input [(ngModel)]="keyword" placeholder="Filter your to-dos"/>
+<label class="hide">Filter</label>
+<div class="taskItem" *ngFor="let task of tasks | filter: keyword; let i = index">
+    <div class="leftItems">
+        <p>{{i + 1}}</p>
+        <button class="complete" *ngIf="!task.completed" (click)="completeTask(i)">Complete</button>
+        <div class="listedItems">
+            <p class="task" [ngClass]="{strike: task.completed}">{{task.task}}</p>
+            <!-- <p class="status">{{task.completed}}</p> -->
+        </div>
+    </div>
+        <button class="remove" (click)="removeTask(i)">x</button>
 </div>
+<input [(ngModel)]="addTodo" placeholder="Add your to-do" (keyup.enter)="addTask(newItem.value); newItem.value = ''"/>
+<label class="hide" for="addItemInput">add Todo</label> 
+<button class="add" (click)="addTask(newItem.value)">Add</button>
+</div>
+
+<!-- ng for of pipe filter -->
