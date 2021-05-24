@@ -12,7 +12,9 @@ interface Todo {
 })
 export class TodoComponent implements OnInit {
 
-  keyword: string = "";
+  addTodo: string = '';
+
+  searchTerm: string = '';
 
   tasks: Todo[] = [
     {
@@ -41,6 +43,7 @@ export class TodoComponent implements OnInit {
     },
     ];
 
+
     removeTask(index: number) {
       this.tasks.splice(index,1)
     }
@@ -49,21 +52,14 @@ export class TodoComponent implements OnInit {
       this.tasks[index].completed = true;
     }
 
-    addTask(task: string) {
-      this.tasks.unshift({
-        task,
+    addTask() {
+      this.tasks.push({
+        task: this.addTodo,
         completed: false
-      });
+      })
+        // console.log(this.addTodo);
+        this.addTodo='';
     }
-
-
-    // strikeTask() {
-    //   task.completed = !task.completed;
-    // }
-
-    // strikethrough(index) {
-    //   this.tasks.classList.add = "strikethrough"(index)
-    // }
 
   constructor() { }
 
