@@ -21,7 +21,7 @@
 .listedItems {
   display: flex;
   flex-direction: row;
-  /* margin-left: 10px; */
+  margin-left: 10px;
 }
 
 .leftItems {
